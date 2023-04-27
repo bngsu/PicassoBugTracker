@@ -1,0 +1,36 @@
+﻿@{
+}
+@model List<Project>
+
+<div class="row mt-3">
+    <div class="col-12">
+        <h1>Project</h1>
+    </div>
+<div class="text-end">
+        <a href="/Project/Add" class="btn btn-success">Submit Project</a>
+</div>
+</div>
+
+<h2>Project List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ProjectName</th>
+            <th>Detail</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var project in Model)
+        {
+                <tr>
+                    <td>@project.Id</td>
+                    <td>@project.ProjectName</td>
+                    <td>
+                    <a href="/Project/Detail/@project.Id">Detail</a>
+                   </td>
+                </tr>
+        }
+    </tbody>
+</table>

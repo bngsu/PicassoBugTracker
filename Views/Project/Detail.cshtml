@@ -1,0 +1,16 @@
+﻿@{
+}
+    @model Project
+
+   <h3>Detail</h3>
+
+    <div class="card">
+        <div class="card-header">
+            <b> @Model.ProjectName </b>
+        </div>
+        <div class="card-footer text-end">
+            <a href="/Project/Delete/@Model.Id" class="btn btn-danger">Delete</a>
+            <a href="/Project/Update/@Model.Id" class="btn btn-secondary">Update</a>
+        </div>
+    </div>
+

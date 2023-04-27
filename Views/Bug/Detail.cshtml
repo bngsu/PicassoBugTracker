@@ -1,0 +1,48 @@
+﻿@{
+}
+    @model dynamic
+
+<h3>Detail</h3>
+
+
+    <div class="card">
+        <div class="card-header">
+            <b> @Model.bugs.Title </b>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li>Description: @Model.bugs.Description</li>
+                <li>Priority: @Model.bugs.Priority</li>
+                <li>Status: @Model.bugs.Status</li>
+            </ul>
+        </div>
+        <div class="card-footer text-end">
+            <a href="/Bug/Delete/@Model.bugs.Id" class="btn btn-danger">Delete</a>
+            <a href="/Bug/Update/@Model.bugs.Id" class="btn btn-secondary">Update</a>
+            <a href="/Bug/Comment/@Model.bugs.Id" class="btn btn-primary">Comment</a>
+        </div>
+
+        <h2>Comment List</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>BugId</th>
+                    <th>Commentator</th>
+                    <th>CommentDescription</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var comments in Model.comments)
+                {
+                    <tr>
+                        <td>@comments.BugID</td>
+                        <td>@comments.Commentor</td>
+                        <td>@comments.CommentDescription</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
